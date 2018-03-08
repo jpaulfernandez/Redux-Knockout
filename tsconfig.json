@@ -1,7 +1,14 @@
 {
     "files": [
-        "source/assets/js/app.ts",
-        "source/assets/js/user.ts"
+        "source/assets/ts/app.ts",
+        "source/assets/ts/actions/actions.ts",
+        "source/assets/ts/components/task-card.ts",
+        "source/assets/ts/infrastructure/ActionType.ts",
+        "source/assets/ts/infrastructure/IAction.ts",
+        "source/assets/ts/infrastructure/IAppState.ts",
+        "source/assets/ts/reducers/app-reducer.ts",
+        "source/assets/ts/store/app-store.ts",
+        "source/assets/ts/viewmodels/taskListViewModel.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,

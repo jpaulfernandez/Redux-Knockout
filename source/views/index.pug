@@ -23,16 +23,16 @@ html(lang="en")
                 .row
                     .col-md-6.offset-md-3.mt40
                         .input-group.col-sm-12
-                            input(type='text', placeholder='Add Task').form-control
+                            input(type='text', placeholder='Add Task', data-bind='value: $root.newTask').form-control
                             span.input-group-append
-                                button.btn.btn-outline-secondary(type='button') Add
-
+                                button.btn.btn-outline-secondary(type='button', data-bind="click:$root.addTaskToList") Add
                 .row
-                    .col-md-6.offset-md-3.mt40
-                        .task-card
-                            span.fa.fa-close
-                            h2.task-name Task Name
-
+                // ko foreach:$root.appState().taskList
+                .col-md-6.offset-md-3.mt20
+                    .task-card
+                        span.fa.fa-close(data-bind="click:$root.deleteTaskToList.bind($data)")
+                        h2.task-name(data-bind="text: $data")
+                // /ko
         
         script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
         script(src='https://cdjns.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
